@@ -6,3 +6,5 @@ This is the entire source code for all work we do with data.
 - Air Quality
 - NHS Expenditure
 - Local Elections
+- Active Travel
+- COVID-19

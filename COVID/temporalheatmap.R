@@ -11,7 +11,7 @@ library(knitr)
 library(tidyverse)
 library(plotly)
 
-#retrieve the data from the government's website
+#retrieve the data from the government's website - nb you can now select MSOAs by region and even individual MSOAs, but I've left it as the link for the whole UK for demonstration purposes
 x <- GET("https://api.coronavirus.data.gov.uk/v2/data?areaType=msoa&areaCode=E06000054&metric=newCasesBySpecimenDateRollingSum&metric=newCasesBySpecimenDateRollingRate&format=csv")
 bin <- content(x, "raw")
 writeBin(bin, "data.csv")

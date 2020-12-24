@@ -6,8 +6,8 @@ library(tmap)
 library(gifski)
 library(stplanr)
 
-#retrieve the data from the government's website
-x <- GET("https://coronavirus.data.gov.uk/downloads/msoa_data/MSOAs_latest.csv")
+#retrieve the data from the government's website - nb you can now select MSOAs by region and even individual MSOAs
+x <- GET("https://api.coronavirus.data.gov.uk/v2/data?areaType=msoa&areaCode=E06000054&metric=newCasesBySpecimenDateRollingSum&metric=newCasesBySpecimenDateRollingRate&format=csv")
 bin <- content(x, "raw")
 writeBin(bin, "data.csv")
 dat = read.csv("data.csv", header = TRUE, dec = ",")
